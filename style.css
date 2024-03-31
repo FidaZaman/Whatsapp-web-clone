@@ -1,0 +1,414 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #0c1317;
+    font-family:  Helvetica;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 1650px;
+    margin: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* this is 2 sides */
+/* left side */
+
+.left{
+    background-color: #111b21;
+    width: 30%;
+    height: 94vh;
+    border-right:1px solid #536672;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #536672 #111b21;
+    max-width: 50%;
+}
+.left::-webkit-scrollbar {
+    width: 4px;
+}
+.left::-webkit-scrollbar-thumb {
+    background-color: #536672;
+    border-radius: 10px;
+}
+.left::-webkit-scrollbar-track {
+    background-color: #111b21;
+}
+
+/*Head part*/
+.left .fix {
+    position: sticky;
+    top: 0;
+    background-color: #111b21;
+    z-index: 1;
+}
+.left .head{
+    height: 60px;
+    background-color: #202c33;
+    display: flex;
+    justify-content: space-between;
+}
+.left .head .profile img{
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.left .head .icons{
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left .head .icons i{
+    color: #aebac1;
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+.left .head .icons i:last-child{
+    margin-right: 0px;
+}
+.left .head .icons i:last-child{
+    padding: 10px 18px;
+}
+
+.left .head .icons i:hover{
+    background-color: #2a3942;
+}
+
+/*search part*/
+.left .search_main{
+    width: 100%;
+    height: 48px;
+    background-color: #111b21;
+    margin-top: 10px;
+}
+.left .search_main .search{
+    width: 330px;
+    height: 15px;
+    margin: 0 10px;
+    margin-left: 25px;
+    background-color: #202c33;
+    padding: 10px;
+    float: left;
+    display: flex;
+    border-radius: 10px;
+}
+.left .search_main .search input{
+    background-color: transparent;
+    width: 325px;
+    height: 20px;
+    border: none;
+    outline: none;
+    font-size: 15x;
+    color: #dee6eb;
+    margin-right: 25px;
+    margin-left: 40px;
+    margin-top: -2px;
+}
+
+input::placeholder {
+    color: #8c98a0; /* Replace with your desired color code */
+}
+.left .search_main .fa-filter{
+    color: #7a8286;
+    float: left;
+    margin-top: 5px;
+    margin-right:5px;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.left .search_main .search_icon{
+    background: url(assets/search.png) no-repeat;
+    width: 25px;
+    height: 20px;
+    background-size: 15px;
+    transition: 0.2s ease-in;
+    
+}
+.left .search_main .search input:focus+.search_icon{
+    background: url(assets/left_arrow.png) no-repeat;
+    width: 17px;
+    height: 20px;
+    background-size: 15px;
+    padding: 2px;
+    animation: searchI 0.3s;
+    cursor: pointer;
+}
+
+@keyframes searchI {
+    0% {
+        transform: rotate(-90deg);
+        background: url(assets/left_arrow.png) no-repeat;
+        transform-origin: center;
+    }
+    100% {
+        transform: rotate(0deg);
+        background: url(assets/left_arrow.png) no-repeat;
+        transform-origin: center;
+    }
+}
+
+
+
+/*Chats part*/
+.left .chats{
+    display: block;
+    margin-top: 0px;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #536672 #111b21;
+    flex: 1;
+    overflow-x: hidden;
+}
+.left .chats .chat{
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    line-height: 23px;
+    cursor: pointer;
+}
+.left .chats .chat:hover{
+    background-color: #1e2930;
+}
+.left .chats .chat .avater img{
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 15px;
+}
+.left .chats .chat .name_info{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-left: 83px;
+}
+.left .chats hr{
+    border: none;
+    border-bottom: 1px solid #1e2930;
+    width: 370px;
+    margin-left: 84px;
+    margin-top: 15px;
+}
+.left .chats .chat .name_info .name{
+    
+    font-size: 16px;
+    color: #d1d7db;
+}
+.left .chats .chat .name_info .time{
+    font-size: 12px;
+    color: #8da3b3;
+}
+.left .chats .chat .conv{
+    width: 372px;
+    margin-left: 83px;
+    font-size: 13px;
+    color: #829baa;
+    position: relative;
+}
+
+.left .chats .chat .conv .convs{
+    width: 360px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+.left .chats .hovI{
+    font-size: 12px;
+    color: #829baa;
+    width: 20px;
+    transform: translate(455px,0);
+    margin-top: -30px;
+    transition: 0.1s;
+    opacity: 0;
+}
+.left .chats .chat:hover+.hovI{
+    transform: translateX(445px);
+    opacity: 1;
+}
+
+.left .chats .chat.active{
+    background-color: #2a3942;
+}
+
+
+
+
+
+
+/* ------------ Right side ---------- */
+.right{
+    background: url(assets/desktop-wallpaper-whatsapp-dark-whatsapp-chat.jpg);
+    background-size: 400px;
+    width: 70%;
+    height: 94vh;
+    min-width: 40%;
+    color: white;
+}
+.right .topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #202c33;
+}
+.right .topbar .srt_info{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right .topbar .srt_info .profile img{
+    width: 45px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.right .topbar .srt_info .name{
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.right .topbar .r_icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right .topbar .r_icons .call, .right .topbar .r_icons .search, .right .topbar .r_icons .menu{
+    color: #a7b3ba;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 30px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.right .topbar .r_icons .call{
+    display: flex;
+    width: 35px;
+}
+.right .topbar .r_icons .call i:last-child{
+    font-size: 10px;
+    margin-left: 6px;
+    display: flex;
+    margin-top: 4px;
+}
+
+.right{
+    position: relative;
+}
+.right .conversation{
+    width: 100%;
+    height: 79vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #536672 #111b21;
+}
+.right .conversation::-webkit-scrollbar {
+    width: 4px;
+}
+.right .conversation::-webkit-scrollbar-thumb {
+    background-color: #536672;
+    border-radius: 10px;
+}                             
+.right .conversation::-webkit-scrollbar-track {
+    background-color: #111b21;
+}
+
+.right .conversation .lCon{
+    background-color: #202c33;
+    width: fit-content;          
+    padding: 10px 20px;
+    margin-left: 20px;
+    margin-top: 15px;
+    border-radius: 0px 10px 10px 10px;
+}
+.right .conversation .cblock{
+    width: 100%;
+    display: inline-block;
+}
+
+.right .conversation .lCon span,.right .conversation .rCon span{
+    font-size: 9px;
+    margin-left: 10px;
+    color: #a7b3ba;
+}
+.right .conversation .rCon{
+    float: right;
+    align-items: center;
+    background-color: #005c4b;
+    width: fit-content;
+    padding: 10px 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    border-radius: 10px 0px 10px 10px;
+}
+.right .conversation .rCon .tm{
+    margin-left: 5px;
+}
+.right .conversation .rCon .tm .tick i, .right .conversation .lCon .tm .tick i{
+    color: #249fdc;
+    font-size: 10px;
+    margin-left: -8.5px;
+}
+
+
+.right .send{
+    position: absolute;
+    width: 100%;
+    height:70px;
+    bottom: 0;
+    background-color: #202c33;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right .send .emoji, .right .send .attach,.right .send .voice{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7c8b95;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.right .send .emoji:hover, .right .send .attach:hover,.right .send .voice:hover{
+background-color: #2a3942;
+}
+.right .send input{
+    width: 1150px;
+    height: 42px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    font-size: 15px;
+    background-color: #2a3942;
+    color: #bccad5;
+}
