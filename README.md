@@ -11,3 +11,7 @@ only `HTML` and `CSS`.
 - [ ] on clicking profile it will popup a window
 - [ ] make chat's for individual so that if click on any conversation it shows the chats of the person.
 - [ ]  new chat sould be apear first
+
+# credits
+- icons from [font awsome](https://fontawesome.com/)
+- images from public source.
